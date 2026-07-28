@@ -109,6 +109,20 @@
         </form>
       </div>
 
+      <div id="step-pending" class="hidden">
+        <span class="username-pill" id="pending-username"></span>
+
+        <div class="confirm-box" style="background:#e7f3ec; border-color:#bfe0cd;">
+          <p><strong data-i18n="pendingTitle">This account is already scheduled for deletion</strong></p>
+          <p style="margin:0; font-size:13.5px; color:var(--ink-soft);" id="pending-days-text"></p>
+        </div>
+
+        <div id="pending-msg"></div>
+
+        <button class="btn-primary" id="restore-btn" data-i18n="restoreBtn">Cancel deletion, restore my account</button>
+        <button class="btn-ghost" id="pending-proceed-btn" data-i18n="pendingProceedBtn">Delete anyway, don't wait</button>
+      </div>
+
       <div id="step-confirm" class="hidden">
         <span class="username-pill" id="confirm-username"></span>
 
@@ -119,12 +133,21 @@
             <li data-i18n="confirmItem2">Gold/gem balance and in-game transaction history</li>
             <li data-i18n="confirmItem3">Match history and linked account information</li>
           </ul>
+          <p style="margin:8px 0 0; font-size:13px;" data-i18n="confirmGraceNote">Your account will be deactivated immediately and permanently deleted, along with all related data, within 30 days.</p>
         </div>
 
         <div id="confirm-msg"></div>
 
         <button class="btn-danger" id="confirm-delete-btn" data-i18n="deleteBtn">Permanently delete account</button>
         <button class="btn-ghost" id="cancel-btn" data-i18n="cancelBtn">Cancel, go back</button>
+      </div>
+
+      <div id="step-restored" class="hidden center">
+        <div class="success-icon">✓</div>
+        <p style="font-weight:700; margin-bottom:6px;" data-i18n="restoredTitle">Account restored</p>
+        <p class="intro" style="margin-bottom:0;" data-i18n="restoredText">
+          Your deletion request has been cancelled. Your account is active again.
+        </p>
       </div>
 
       <div id="step-done" class="hidden center">
@@ -161,9 +184,17 @@
       confirmItem1: "All game progress, levels and items",
       confirmItem2: "Gold/gem balance and in-game transaction history",
       confirmItem3: "Match history and linked account information",
+      confirmGraceNote: "Your account will be deactivated immediately and permanently deleted, along with all related data, within 30 days.",
       deleteBtn: "Permanently delete account",
       deleteBtnLoading: "Deleting…",
       cancelBtn: "Cancel, go back",
+      pendingTitle: "This account is already scheduled for deletion",
+      pendingDaysText: "It will be permanently deleted in {days} day(s) (around {date}).",
+      restoreBtn: "Cancel deletion, restore my account",
+      restoreBtnLoading: "Restoring…",
+      pendingProceedBtn: "Delete anyway, don't wait",
+      restoredTitle: "Account restored",
+      restoredText: "Your deletion request has been cancelled. Your account is active again.",
       doneTitle: "Deletion requested",
       doneText: "Your account has been deactivated and will be permanently deleted, along with all related data, within 30 days. If this wasn't you, contact support immediately.",
       footerText: "Questions? Contact",
@@ -184,9 +215,17 @@
       confirmItem1: "Toàn bộ tiến trình chơi, cấp độ, vật phẩm",
       confirmItem2: "Số dư vàng/gem và lịch sử giao dịch trong game",
       confirmItem3: "Lịch sử trận đấu và thông tin liên kết tài khoản",
+      confirmGraceNote: "Tài khoản sẽ bị vô hiệu hóa ngay lập tức và bị xóa vĩnh viễn cùng toàn bộ dữ liệu liên quan trong vòng 30 ngày.",
       deleteBtn: "Xóa vĩnh viễn tài khoản",
       deleteBtnLoading: "Đang xóa…",
       cancelBtn: "Hủy, quay lại",
+      pendingTitle: "Tài khoản này đã được lên lịch xóa",
+      pendingDaysText: "Tài khoản sẽ bị xóa vĩnh viễn sau {days} ngày nữa (khoảng ngày {date}).",
+      restoreBtn: "Hủy yêu cầu xóa, khôi phục tài khoản",
+      restoreBtnLoading: "Đang khôi phục…",
+      pendingProceedBtn: "Vẫn xóa ngay, không cần chờ",
+      restoredTitle: "Đã khôi phục tài khoản",
+      restoredText: "Yêu cầu xóa đã được hủy. Tài khoản của bạn đã hoạt động trở lại bình thường.",
       doneTitle: "Đã ghi nhận yêu cầu xóa",
       doneText: "Tài khoản của bạn đã bị vô hiệu hóa và sẽ bị xóa vĩnh viễn cùng toàn bộ dữ liệu liên quan trong vòng 30 ngày. Nếu đây không phải do bạn thực hiện, hãy liên hệ hỗ trợ ngay.",
       footerText: "Mọi thắc mắc liên hệ",
@@ -207,9 +246,17 @@
       confirmItem1: "所有游戏进度、等级和物品",
       confirmItem2: "金币/宝石余额及游戏内交易记录",
       confirmItem3: "对战记录及关联账户信息",
+      confirmGraceNote: "您的账户将立即被停用，并将在30天内连同所有相关数据一起被永久删除。",
       deleteBtn: "永久删除账户",
       deleteBtnLoading: "删除中…",
       cancelBtn: "取消，返回",
+      pendingTitle: "该账户已被安排删除",
+      pendingDaysText: "该账户将在 {days} 天后（约 {date}）被永久删除。",
+      restoreBtn: "取消删除，恢复账户",
+      restoreBtnLoading: "恢复中…",
+      pendingProceedBtn: "仍然立即删除，不再等待",
+      restoredTitle: "账户已恢复",
+      restoredText: "删除请求已取消，您的账户已恢复正常。",
       doneTitle: "删除请求已提交",
       doneText: "您的账户已被停用，账户及所有相关数据将在30天内被永久删除。如果这不是您本人操作，请立即联系客服。",
       footerText: "如有疑问，请联系",
@@ -239,11 +286,18 @@
   });
 
   const stepLogin = document.getElementById('step-login');
+  const stepPending = document.getElementById('step-pending');
   const stepConfirm = document.getElementById('step-confirm');
+  const stepRestored = document.getElementById('step-restored');
   const stepDone = document.getElementById('step-done');
   const loginForm = document.getElementById('login-form');
   const loginBtn = document.getElementById('login-btn');
   const loginMsg = document.getElementById('login-msg');
+  const pendingUsername = document.getElementById('pending-username');
+  const pendingDaysText = document.getElementById('pending-days-text');
+  const pendingMsg = document.getElementById('pending-msg');
+  const restoreBtn = document.getElementById('restore-btn');
+  const pendingProceedBtn = document.getElementById('pending-proceed-btn');
   const confirmUsername = document.getElementById('confirm-username');
   const confirmMsg = document.getElementById('confirm-msg');
   const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
@@ -261,7 +315,9 @@
     const map = {
       'Sai tên đăng nhập hoặc mật khẩu': t.errLogin,
       'Xóa dữ liệu thất bại, vui lòng thử lại': t.errGeneric,
-      'Vui lòng nhập đầy đủ thông tin': t.errGeneric
+      'Vui lòng nhập đầy đủ thông tin': t.errGeneric,
+      'Tài khoản này không ở trạng thái chờ xóa': t.errGeneric,
+      'Không thể hủy yêu cầu xóa, vui lòng thử lại': t.errGeneric
     };
     return map[rawMessage] || rawMessage;
   }
@@ -286,9 +342,23 @@
       if (data.success) {
         currentUsername = username;
         currentPassword = password;
-        confirmUsername.textContent = data.username || username;
         stepLogin.classList.add('hidden');
-        stepConfirm.classList.remove('hidden');
+
+        if (data.status === 'pending_deletion') {
+          pendingUsername.textContent = data.username || username;
+          const info = data.deletion_info;
+          if (info) {
+            pendingDaysText.textContent = t.pendingDaysText
+              .replace('{days}', info.days_left)
+              .replace('{date}', info.delete_at);
+          } else {
+            pendingDaysText.textContent = '';
+          }
+          stepPending.classList.remove('hidden');
+        } else {
+          confirmUsername.textContent = data.username || username;
+          stepConfirm.classList.remove('hidden');
+        }
       } else {
         showMsg(loginMsg, localizeServerMessage(data.message) || t.errGeneric, 'error');
       }
@@ -304,6 +374,40 @@
     currentPassword = '';
     stepConfirm.classList.add('hidden');
     stepLogin.classList.remove('hidden');
+  });
+
+  pendingProceedBtn.addEventListener('click', () => {
+    confirmUsername.textContent = currentUsername;
+    stepPending.classList.add('hidden');
+    stepConfirm.classList.remove('hidden');
+  });
+
+  restoreBtn.addEventListener('click', async () => {
+    clearMsg(pendingMsg);
+    const t = translations[currentLang];
+    restoreBtn.disabled = true;
+    restoreBtn.innerHTML = `<span class="spinner"></span>${t.restoreBtnLoading}`;
+
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `action=cancel_deletion&username=${encodeURIComponent(currentUsername)}&password=${encodeURIComponent(currentPassword)}`
+      });
+      const data = await res.json();
+      if (data.success) {
+        stepPending.classList.add('hidden');
+        stepRestored.classList.remove('hidden');
+      } else {
+        showMsg(pendingMsg, localizeServerMessage(data.message) || t.errGeneric, 'error');
+        restoreBtn.disabled = false;
+        restoreBtn.textContent = t.restoreBtn;
+      }
+    } catch (err) {
+      showMsg(pendingMsg, t.errNetwork, 'error');
+      restoreBtn.disabled = false;
+      restoreBtn.textContent = t.restoreBtn;
+    }
   });
 
   confirmDeleteBtn.addEventListener('click', async () => {
